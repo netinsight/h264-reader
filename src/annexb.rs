@@ -241,7 +241,7 @@ impl<H: NalFragmentHandler> AnnexBReader<H> {
     }
 
     fn err(&mut self, b: u8) {
-        error!("AnnexBReader: state={:?}, invalid byte {:#x}", self.state, b);
+        debug!("AnnexBReader: state={:?}, invalid byte {:#x}", self.state, b);
         self.state = ParseState::Start;
     }
 }
